@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: imports
+# key: <imports
+# --
+
+import import1
+import import2
+import import3
+import import4

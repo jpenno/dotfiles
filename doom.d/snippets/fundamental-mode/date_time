@@ -1,0 +1,4 @@
+# key: <dtime
+# name: date_time
+# --
+`(format-time-string "%Y-%m-%d %I:%M %p")`

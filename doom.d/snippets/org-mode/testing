@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: testing
+# key: <tst
+# --
+
+* Here is some test text
+** sub heading
