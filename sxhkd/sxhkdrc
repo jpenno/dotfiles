@@ -1,0 +1,78 @@
+#################################################################
+# Game keys
+#################################################################
+# RuneLite
+super + g ; r
+	flatpak run net.runelite.RuneLite
+# RuneLite
+super + g ; s
+	steam
+#################################################################
+# Configs
+#################################################################
+# i3config
+super + c ; i
+	alacritty -e nvim ~/.config/i3/config
+# bashrc
+super + c ; b
+	alacritty -e nvim ~/.bashrc
+# sxhkdrc
+super + c ; k
+	alacritty -e nvim ~/dotfiles/sxhkd/sxhkdrc
+#################################################################
+# Programms
+#################################################################
+# Alacritty
+super + Return
+	alacritty
+super + t
+	alacritty
+# brave
+super + w
+	brave-browser
+# qutebrowser
+super + shift + w
+	qutebrowser
+# emacs
+super + e
+	emacsclient -c
+# thunar
+super + shift + f
+	thunar
+#################################################################
+# Rofi
+#################################################################
+# drun
+super + d
+	rofi -show drun
+# alt tab
+alt + Tab
+	rofi -no-lazy-grab -modi window -show
+alt + F2
+	firefox
+#################################################################
+# Media
+#################################################################
+# play pause media
+XF86AudioPlay
+	playerctl play-pause	
+super + m ; p
+	playerctl play-pause	
+# play pause spotify
+super + m ; s
+	playerctl -p spotify play-pause	
+# volume up
+XF86AudioRaiseVolume
+	pactl set-sink-volume @DEFAULT_SINK@ +1%
+super + m ; u
+	pactl set-sink-volume @DEFAULT_SINK@ +10%
+# volume down
+XF86AudioLowerVolume
+	pactl set-sink-volume @DEFAULT_SINK@ -1%
+super + m ; d
+	pactl set-sink-volume @DEFAULT_SINK@ -10%
+# voulme mute
+super + m ; m
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
