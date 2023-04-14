@@ -1,0 +1,19 @@
+
+# configs
+alias i3con='nvim ~/.config/i3/config'
+alias bash='nvim ~/.bashrc'
+alias keycon='nvim ~/dotfiles/sxhkd/sxhkdrc'
+# fedora
+alias update='sudo dnf update'
+# terminal
+alias cl='clear'
+alias x='exit'
+alias la='ll -a'
+# cargo 
+alias cr='cargo run'
+alias cb='cargo build'
+alias cc='cargo check'
+# yt-dlp
+alias yt-dl='yt-dlp -o "Videos/ytdl/%(uploader)s/%(title)s.%(ext)s"'
+
+eval "$(starship init zsh)"
