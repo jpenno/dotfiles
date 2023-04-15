@@ -112,16 +112,19 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Gaps
-# gaps inner 5
-# gaps outer 2
+gaps inner 4
+gaps outer 4
+smart_gaps on
 
 # Window rules
 for_window [class="^.*"] border pixel 0
 for_window [class="shooter_game"] floating enable
 for_window [class="net-runelite-client-RuneLite"] floating enable border pixel 4
 for_window [class="firefox"] border pixel 0
+#for_window [class="Alacritty"] border pixel 2
 
 # exec --no-startup-id polybar
+
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
