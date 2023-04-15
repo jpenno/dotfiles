@@ -4,48 +4,57 @@
 # RuneLite
 super + g ; r
 	flatpak run net.runelite.RuneLite
-# RuneLite
+# Steam
 super + g ; s
 	steam
 #################################################################
 # Configs
 #################################################################
-# i3config
+# I3config
 super + c ; i
 	alacritty -e nvim ~/.config/i3/config
-# bashrc
+# Bashrc
 super + c ; b
 	alacritty -e nvim ~/.bashrc
-# sxhkdrc
+# Zashrc
+super + c ; z
+	alacritty -e nvim ~/.zshrc
+# Sxhkdrc
 super + c ; k
 	alacritty -e nvim ~/dotfiles/sxhkd/sxhkdrc
 #################################################################
 # Programms
 #################################################################
-# Alacritty
+# Kitty
 super + Return
-	alacritty
+	kitty
 super + t
-	alacritty
-# brave
+	kitty
+# Brave
 super + w
 	brave-browser
-# qutebrowser
+# Qutebrowser
 super + shift + w
 	qutebrowser
-# emacs
+# Emacs
 super + e
 	emacsclient -c
-# thunar
+# Thunar
 super + shift + f
 	thunar
+# Spotify
+super + o ; s
+	flatpak run com.spotify.Client
+# Bitwarden
+super + o ; b
+	flatpak run com.bitwarden.desktop
 #################################################################
 # Rofi
 #################################################################
-# drun
+# Drun
 super + d
 	rofi -show drun
-# alt tab
+# Alt tab
 alt + Tab
 	rofi -no-lazy-grab -modi window -show
 alt + F2
@@ -53,26 +62,36 @@ alt + F2
 #################################################################
 # Media
 #################################################################
-# play pause media
+# Play pause media
 XF86AudioPlay
 	playerctl play-pause	
 super + m ; p
 	playerctl play-pause	
-# play pause spotify
+# Play pause spotify
 super + m ; s
 	playerctl -p spotify play-pause	
-# volume up
+# Play pause mpv
+super + m ; o
+	playerctl -p mpv play-pause
+# Volume up
 XF86AudioRaiseVolume
 	pactl set-sink-volume @DEFAULT_SINK@ +1%
 super + m ; u
 	pactl set-sink-volume @DEFAULT_SINK@ +10%
-# volume down
+# Volume down
 XF86AudioLowerVolume
 	pactl set-sink-volume @DEFAULT_SINK@ -1%
 super + m ; d
 	pactl set-sink-volume @DEFAULT_SINK@ -10%
-# voulme mute
+# Voulme mute
 super + m ; m
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
+#################################################################
+# Scripts
+#################################################################
+# Randomly change wall papers
+super + c ; w
+	feh --randomize --bg-fill ~/Wallpapers/*
+
