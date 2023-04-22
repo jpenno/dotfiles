@@ -154,6 +154,7 @@ c.fonts.default_size = '20pt'
 # Bindings for normal mode
 config.bind('M', 'hint links spawn mpv {hint-url}')
 config.bind('Z', 'hint links spawn alacritty -e yt-dlp -o "Videos/ytdl/%(uploader)s/%(title)s.%(ext)s" "{hint-url}"')
+config.bind('A', 'hint links spawn alacritty -e yt-dlp -x --audio-format m4a -o "Music/ytdl/%(uploader)s/%(title)s.%(ext)s" "{hint-url}"')
 config.bind('xb', 'config-cycle statusbar.show always never')
 
 # Binds for moving through completion items
