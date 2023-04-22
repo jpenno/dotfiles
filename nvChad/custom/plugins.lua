@@ -51,6 +51,24 @@ local plugins = {
       table.insert(M.sources, {name = "crates"})
       return M
     end
+  },
+  {
+    'ggandor/lightspeed.nvim',
+    event = "BufRead",
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = "LazyGit",
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
   }
 }
 return plugins
