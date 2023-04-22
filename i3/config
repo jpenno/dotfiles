@@ -85,12 +85,12 @@ bindsym $mod+b split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+Shift+s layout stacking
 bindsym $mod+Shift+t layout tabbed
-bindsym $mod+Shift+e layout toggle split
+bindsym $mod+s layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -119,7 +119,8 @@ smart_gaps on
 # Window rules
 for_window [class="^.*"] border pixel 0
 for_window [class="shooter_game"] floating enable
-for_window [class="net-runelite-client-RuneLite"] floating enable border pixel 4
+for_window [class="bevy-ball-game"] floating enable
+for_window [class="net-runelite-client-RuneLite"] border pixel 4
 for_window [class="firefox"] border pixel 0
 #for_window [class="Alacritty"] border pixel 2
 
