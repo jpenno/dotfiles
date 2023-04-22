@@ -40,7 +40,7 @@ super + shift + w
 super + e
 	emacsclient -c
 # Thunar
-super + shift + f
+super + f
 	thunar
 # Spotify
 super + o ; s
