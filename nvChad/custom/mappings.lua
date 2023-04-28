@@ -44,6 +44,14 @@ M.dap = {
       end,
       "Open debugging sidebar"
     },
+    ["<leader>dso"] = {
+      "<cmd> DapStepOver <CR>",
+      "Step over"
+    },
+    ["<leader>dss"] = {
+      "<cmd> RustDebuggables <CR>",
+      "Start debugger"
+    },
   }
 }
 

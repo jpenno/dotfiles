@@ -1,8 +1,15 @@
 
+# vars
+export EDITOR='~/.local/bin/lvim'
+path+="~/.config/emacs/bin:$PATH"
+
 # configs
-alias i3con='nvim ~/.config/i3/config'
-alias bash='nvim ~/.bashrc'
-alias keycon='nvim ~/dotfiles/sxhkd/sxhkdrc'
+alias i3con='lvim ~/.config/i3/config'
+alias bashrc='lvim ~/.bashrc'
+alias keycon='lvim ~/dotfiles/sxhkd/sxhkdrc'
+alias zshrc='lvim ~/.zshrc'
+alias myzsh='lvim ~/dotfiles/zsh/myzshrc'
+alias lvimcon='cd ~/.config/lvim/ && lvim'
 # fedora
 alias update='sudo dnf update'
 # terminal
@@ -12,8 +19,12 @@ alias la='ll -a'
 # cargo 
 alias cr='cargo run'
 alias cb='cargo build'
+alias ct='cargo test'
 alias cc='cargo check'
+alias ccc='cargo clippy'
 # yt-dlp
 alias yt-dl='yt-dlp -o "Videos/ytdl/%(uploader)s/%(title)s.%(ext)s"'
-
+alias yt-dl-a='yt-dlp -x --audio-format m4a -o "Music/ytdl/%(uploader)s/%(title)s.%(ext)s"'
+alias yt-dl-mp3='yt-dlp -x --audio-format mp3 -o "Music/ytdl/%(uploader)s/%(title)s.%(ext)s"'
+alias yt-dl-m4a='yt-dlp -x --audio-format m4a -o "Music/ytdl/%(uploader)s/%(title)s.%(ext)s"'
 eval "$(starship init zsh)"

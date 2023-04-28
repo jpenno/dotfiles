@@ -39,6 +39,9 @@ super + shift + w
 # Emacs
 super + e
 	emacsclient -c
+# Emacs deamon
+super + o ; e
+	  emacs --daemon
 # Thunar
 super + f
 	thunar
@@ -94,4 +97,14 @@ XF86AudioMute
 # Randomly change wall papers
 super + c ; w
 	feh --randomize --bg-fill ~/Wallpapers/*
-
+#################################################################
+# Keyboard layouts
+#################################################################
+# set keyboard layout to engram
+super + i ; d
+  setxkbmap -layout us    -variant engram
+# set keyboard layout to qwerty
+super + i ; q
+  setxkbmap -layout us 
+super + i ; 3
+  ~/scripts/set_3l.sh
