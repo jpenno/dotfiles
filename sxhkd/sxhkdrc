@@ -7,6 +7,8 @@ super + g ; r
 # Steam
 super + g ; s
 	steam
+# Mine craft
+super + g ; m
 #################################################################
 # Configs
 #################################################################
@@ -108,3 +110,18 @@ super + i ; q
   setxkbmap -layout us 
 super + i ; 3
   ~/scripts/set_3l.sh
+#################################################################
+# i3
+#################################################################
+# move window foocus
+super + {h, j, k, l}
+  i3-msg focus {left, down, up, right}
+# move windows around
+super + shift + {h, j, k, l}
+  i3-msg move {left, down, up, right}
+# toggle windiwo full screen
+super + shift + f
+  i3-msg fullscreen toggle
+# move workspace to left output
+super + z
+  i3-msg move workspace to output left

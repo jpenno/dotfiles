@@ -49,16 +49,16 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # move workspace to left output
-bindsym $mod+z move workspace to output left
+# bindsym $mod+z move workspace to output left
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+x kill
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+# bindsym $mod+h focus left
+# bindsym $mod+j focus down
+# bindsym $mod+k focus up
+# bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -67,10 +67,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+# bindsym $mod+Shift+h move left
+# bindsym $mod+Shift+j move down
+# bindsym $mod+Shift+k move up
+# bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -85,7 +85,7 @@ bindsym $mod+b split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+Shift+f fullscreen toggle
+# bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+Shift+s layout stacking
@@ -121,7 +121,10 @@ for_window [class="^.*"] border pixel 0
 for_window [class="shooter_game"] floating enable
 for_window [class="bevy-ball-game"] floating enable
 for_window [class="net-runelite-client-RuneLite"] border pixel 4
-for_window [class="firefox"] border pixel 0
+for_window [class="Epistory"] floating enabled
+for_window [class="Heart platformer"] floating enabled
+for_window [class="Astro Roid  Rage"] floating enabled
+for_window [class="shooter_scrolling"] floating enabled
 #for_window [class="Alacritty"] border pixel 2
 
 # exec --no-startup-id polybar
@@ -172,7 +175,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 
 # resize window (you can also use the mouse for that)
@@ -200,7 +203,7 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+# bindsym $mod+r mode "resize"
 
 # auto start
 exec compton -b --config $HOME/.config/picom/picom.conf
