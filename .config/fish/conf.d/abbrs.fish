@@ -14,6 +14,8 @@ abbr -a -- zz exit
 # single key
 abbr -a -- c clear
 abbr -a -- h history
+abbr -a -- t tmux
+abbr -a -- ta tmux attach
 
 #list
 abbr -a -- ls 'exa'
