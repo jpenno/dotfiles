@@ -17,6 +17,7 @@ require('lazy').setup({
   require 'plugins.nvim-autopairs',
   require 'plugins.nvim-colorizer',
   require 'plugins.noice',
+  require 'plugins.markdown',
   -- themes
   -- require 'plugins.tokyonight',
   require 'plugins.catppuccin',
