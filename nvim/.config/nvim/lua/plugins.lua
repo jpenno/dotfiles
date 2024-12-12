@@ -20,8 +20,12 @@ require('lazy').setup({
   require 'plugins.markdown',
   require 'plugins.markdown-preview',
   -- themes
+  require 'plugins.lualine',
+  -- require 'plugins.night-owl',
+  -- require 'plugins.solarized-osaka',
+  require 'plugins.kanagawa',
   -- require 'plugins.tokyonight',
-  require 'plugins.catppuccin',
+  -- require 'plugins.catppuccin',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
