@@ -17,14 +17,14 @@ require('lazy').setup({
   require 'plugins.nvim-autopairs',
   require 'plugins.nvim-colorizer',
   require 'plugins.noice',
-  require 'plugins.markdown',
-  require 'plugins.markdown-preview',
+  -- require 'plugins.markdown',
+  -- require 'plugins.markdown-preview',
   -- themes
   require 'plugins.lualine',
   -- require 'plugins.night-owl',
   -- require 'plugins.solarized-osaka',
-  require 'plugins.kanagawa',
-  -- require 'plugins.tokyonight',
+  -- require 'plugins.kanagawa',
+  require 'plugins.tokyonight',
   -- require 'plugins.catppuccin',
 }, {
   ui = {

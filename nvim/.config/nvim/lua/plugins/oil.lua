@@ -5,6 +5,12 @@ return {
   config = function()
     require('oil').setup {
       default_file_explorer = true,
+
+      filesystem = {
+        filtered_items = {
+          visible = true,
+        },
+      },
     }
   end,
 }
