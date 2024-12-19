@@ -13,7 +13,7 @@ abbr -a -- zz exit
 
 # single key
 abbr -a -- c clear
-abbr -a -- h history
+abbr -a -- h 'history | fzf'
 abbr -a -- t tmux
 abbr -a -- ta tmux attach
 
