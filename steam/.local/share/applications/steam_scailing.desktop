@@ -1,0 +1,5 @@
+ [Desktop Entry]
+ Name=steam testing
+ Exec=/usr/bin/steam -forcedesktopscaling=1.4 %U
+ Type=Application
+ Icon=steam
