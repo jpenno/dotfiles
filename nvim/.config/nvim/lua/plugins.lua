@@ -1,7 +1,7 @@
 require('lazy').setup({
   require 'plugins.which-key',
   require 'plugins.Comment',
-  -- require 'plugins.gitsigns',
+  require 'plugins.gitsigns',
   require 'plugins.telescope',
   require 'plugins.lsp',
   require 'plugins.conform',
@@ -18,6 +18,7 @@ require('lazy').setup({
   require 'plugins.nvim-colorizer',
   require 'plugins.noice',
   require 'plugins.snacks',
+  require 'plugins.scope',
   -- require 'plugins.markdown',
   -- require 'plugins.markdown-preview',
   -- themes
