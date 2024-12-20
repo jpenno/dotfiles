@@ -25,8 +25,8 @@ require('lazy').setup({
   require 'plugins.lualine',
   -- require 'plugins.night-owl',
   -- require 'plugins.solarized-osaka',
-  -- require 'plugins.kanagawa',
-  require 'plugins.tokyonight',
+  require 'plugins.kanagawa',
+  -- require 'plugins.tokyonight',
   -- require 'plugins.catppuccin',
 }, {
   ui = {
