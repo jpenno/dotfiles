@@ -1,0 +1,36 @@
+// =============================================================================
+//
+// Waybar configuration
+//
+// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+//
+// =============================================================================
+
+{
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+    // Load Modules
+    "include": ["~/.config/waybar/modules.json"],
+
+    "layer": "top",
+
+    "position": "bottom",
+
+    // If height property would be not present, it'd be calculated dynamically
+    // "height": 35,
+
+    "modules-left": [
+        "hyprland/workspaces",
+    ],
+    "modules-center": [
+        "group/apps",
+    ],
+    "modules-right": [
+        "custom/media",
+        "pulseaudio",
+        "clock#time",
+        "tray",
+        "custom/wlogout",
+    ],
+}

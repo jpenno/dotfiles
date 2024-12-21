@@ -1,0 +1,159 @@
+    // -------------------------------------------------------------------------
+    // Modules
+    // -------------------------------------------------------------------------
+{
+
+    "clock#time": {
+        "format": "{:%I:%M } 󰥔",
+        "format-alt": "{:%d-%m} ",
+        "tooltip": false,
+        "on-click-right": "gsimplecal"
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "  {usage}% ({load})", // Icon: microchip
+        "states": {
+          "warning": 70,
+          "critical": 90
+        }
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "  {}%", // Icon: memory
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "pulseaudio": {
+        "tooltip": false,
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["󱄠", "󱄠", "󱄠"]
+        },
+        "on-click-right": "pavucontrol",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+   // Workspaces
+    "hyprland/workspaces" : {
+        "on-click": "activate",
+        "all-outputs": false,
+        "active-only": false,
+        "format": "{icon}",
+        "format-icons": {
+           //"1": "", // Icon: firefox-browser
+           //"2": "", // Icon: mail
+           //"3": "", // Icon: code
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+   // Filemanager Launcher
+    "custom/wlogout": {
+        "format": "󰐥",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+  // Group apps
+    "group/apps": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/wofi",
+            "custom/browser",
+            "custom/obsidian",
+            "custom/filemanager",
+            "custom/steam",
+         ]
+    },
+
+   // Filemanager Launcher
+    "custom/filemanager": {
+        "format": "",
+        "on-click": "thunar",
+        "tooltip": false
+    },
+
+    // Browser Launcher
+    "custom/browser": {
+        "format": "",
+        "on-click": "brave",
+        "tooltip": false
+    },
+
+    // Browser Launcher
+    "custom/steam": {
+        "format": "",
+        "on-click": "flatpak run com.valvesoftware.Steam",
+        "tooltip": false
+    },
+
+    // obsidian launcher
+    "custom/obsidian": {
+        "format": "",
+        "on-click": "obsidian",
+        "tooltip": false
+    },
+
+    // launch wofi
+    "custom/wofi": {
+        "format": "",
+        "on-click": "wofi --show drun",
+        "tooltip": false
+    },
+
+    "custom/media": {
+        "format": "{icon}",
+        "interval": 1,
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl -p mpv play-pause",
+        "exec": "~/.dotfiles/.config/waybar/scripts/play-pause.sh",
+        "tooltip": false,
+        "format-icons": {
+            "playing": "",
+            "paused": "",
+        },
+    },
+
+    "custom/mouse": {
+        "format": " {}% {icon}",
+        "interval": 60,
+        "return-type": "json",
+        "exec": "~/dotfiles/.config/waybar/scripts/moues_battery.py",
+        "tooltip": false,
+        "format-icons": {
+            "flat": "",
+            "very-low": "",
+            "low": "",
+            "ok": "",
+            "good": "",
+            "na": ""
+        },
+    },
+
+   "custom/updates": {
+       "format": "{} {icon}",
+       "return-type": "json",
+       "format-icons": {
+           "has-updates": "󱍷",
+           "updated": "󰂪"
+       },
+       "exec-if": "which waybar-module-pacman-updates",
+       "exec": "waybar-module-pacman-updates  --interval-seconds 5 --network-interval-seconds 300"
+   }
+
+}
