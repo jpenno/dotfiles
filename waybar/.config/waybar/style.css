@@ -9,13 +9,13 @@
 /* -----------------------------------------------------------------------------
  * colours
  * -------------------------------------------------------------------------- */
-@define-color foreground	#a9b1d6;
-@define-color background	#1a1b26;
-@define-color black	#414868;
+@define-color foreground	#DDD8BB;
+@define-color background	#363644;
+@define-color black	#171f40;
 @define-color red	#f7768e;
 @define-color green	#73daca;
 @define-color cyan	#7dcfff;
-@define-color white	#c0caf5;
+@define-color white	#82c0af;
 @define-color yellow	#e0af68;
 @define-color magenta	#bb9af7;
 /* -----------------------------------------------------------------------------
@@ -60,11 +60,13 @@
 }
 /* The whole bar */
 #waybar {
-    background-color:rgba(65, 72, 104, 0.6);
+    /* background-color:rgba(65, 72, 104, 0.6); */
+    background-color: #1F1F28;
+
     font-family: Intell One Mono, Cantarell, Noto Sans, sans-serif;
     font-size: 24px;
     border-top: solid;
-    border-top-color: #c0caf5;
+    border-top-color: #49473E;
     border-top-width: 2;
 }
 
@@ -162,7 +164,7 @@
 }
 
 #mode {
-    background: #64727D;
+    background: #82c0af;
     border-top: 2px solid white;
     /* To compensate for the top border and still have vertical centering */
     padding-bottom: 2px;
@@ -216,7 +218,7 @@
     /* padding-bottom: 2px; */
     /* padding-left: 15px; */
     /* padding-right: 15px; */
-    color: @forground;
+    color: #DDD8BB;
     transition: all 0.3s ease-in-out;
     /* opacity: 0.7; */
     border-radius: 15px;
@@ -235,8 +237,8 @@
 }
 
 #workspaces button.active {
-    color: @black;
-    background-color: #c0caf5;
+    color: #DDD8BB;
+    background-color: #614A82;
     /* opacity: 0.9; */
     border-radius: 15px;
 }
@@ -247,7 +249,6 @@
 }
 #custom-filemanager {
     background: @background;
-    color: #a9b1d6;
     color: #7dcfff;
     opacity: 1.0;
     border-radius: 5px;
@@ -293,7 +294,6 @@
 
 #custom-obsidian {
     background: @background;
-    color: #a9b1d6;
     color: #7aa2f7;
     opacity: 1.0;
     border-radius: 5px;
