@@ -97,7 +97,7 @@
     // Browser Launcher
     "custom/steam": {
         "format": "",
-        "on-click": "flatpak run com.valvesoftware.Steam",
+        "on-click": "/usr/bin/steam -forcedesktopscaling=1.4 %U",
         "tooltip": false
     },
 
