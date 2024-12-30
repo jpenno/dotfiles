@@ -1,0 +1,9 @@
+font-size = 24
+font-family = Intel One Mono
+theme = kanagawabones
+background-opacity = 0.70
+window-decoration = false
+gtk-titlebar = false
+mouse-hide-while-typing = true
+
+command = nu
