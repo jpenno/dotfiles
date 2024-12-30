@@ -69,6 +69,7 @@ $env.NU_PLUGIN_DIRS = [
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 $env.PATH = ($env.PATH | append "~/.local/bin")
+$env.PATH = ($env.PATH | append "~/go/bin")
 $env.EDITOR = "nvim"
 
 # omy posh setup
