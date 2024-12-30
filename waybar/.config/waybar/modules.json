@@ -111,7 +111,7 @@
     // launch wofi
     "custom/wofi": {
         "format": "",
-        "on-click": "wofi --show drun",
+        "on-click": "rofi -show run",
         "tooltip": false
     },
 
