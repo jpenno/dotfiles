@@ -19,7 +19,7 @@ require('lazy').setup({
   require 'plugins.noice',
   require 'plugins.snacks',
   require 'plugins.scope',
-  -- require 'plugins.markdown',
+  require 'plugins.markdown',
   -- require 'plugins.markdown-preview',
   -- themes
   require 'plugins.lualine',

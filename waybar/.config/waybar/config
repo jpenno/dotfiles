@@ -6,7 +6,7 @@
 //
 // =============================================================================
 
-{
+[{
     // -------------------------------------------------------------------------
     // Global configuration
     // -------------------------------------------------------------------------
@@ -16,6 +16,7 @@
     "layer": "top",
 
     "position": "bottom",
+    "output": "DP-2",
 
     // If height property would be not present, it'd be calculated dynamically
     // "height": 35,
@@ -33,4 +34,27 @@
         "tray",
         "custom/wlogout",
     ],
-}
+},
+{
+
+    // Load Modules
+    "include": ["~/.config/waybar/modules.json"],
+
+    "layer": "top",
+
+    "position": "bottom",
+    "output": "DP-1",
+
+    // If height property would be not present, it'd be calculated dynamically
+    // "height": 35,
+
+    "modules-center": [
+        "hyprland/workspaces",
+    ],
+    "modules-right": [
+        "custom/media",
+        "pulseaudio",
+        "clock#time",
+    ],
+},
+]

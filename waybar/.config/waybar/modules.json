@@ -97,7 +97,8 @@
     // Browser Launcher
     "custom/steam": {
         "format": "",
-        "on-click": "/usr/bin/steam -forcedesktopscaling=1.4 %U",
+        "on-click": "hyprctl dispatch togglespecialworkspace games",
+        "on-click-right": "/usr/bin/steam -forcedesktopscaling=1.4 %U",
         "tooltip": false
     },
 
@@ -121,7 +122,7 @@
         "return-type": "json",
         "on-click": "playerctl play-pause",
         "on-click-right": "playerctl -p mpv play-pause",
-        "exec": "~/.dotfiles/.config/waybar/scripts/play-pause.sh",
+        "exec": "~/.dotfiles/waybar/.config/waybar/scripts/play-pause.sh",
         "tooltip": false,
         "format-icons": {
             "playing": "",
