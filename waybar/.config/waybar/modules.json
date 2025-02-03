@@ -105,7 +105,7 @@
     // obsidian launcher
     "custom/obsidian": {
         "format": "",
-        "on-click": "obsidian",
+        "on-click": "hyprctl dispatch togglespecialworkspace notes",
         "tooltip": false
     },
 
@@ -134,7 +134,8 @@
         "format": " {}% {icon}",
         "interval": 60,
         "return-type": "json",
-        "exec": "~/dotfiles/.config/waybar/scripts/moues_battery.py",
+        "exec": "~/.dotfiles/waybar/.config/waybar/scripts/moues_battery.py",
+        "on-click": "polychromatic-controller",
         "tooltip": false,
         "format-icons": {
             "flat": "",
@@ -142,7 +143,7 @@
             "low": "",
             "ok": "",
             "good": "",
-            "na": ""
+            "na": "na"
         },
     },
 

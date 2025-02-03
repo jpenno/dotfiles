@@ -1,6 +1,7 @@
 font-size = 24
 font-family = Intel One Mono
 theme = kanagawabones
+theme = tokyonight-storm
 background-opacity = 0.70
 window-decoration = false
 gtk-titlebar = false
