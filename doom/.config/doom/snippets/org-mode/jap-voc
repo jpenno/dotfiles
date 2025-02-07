@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: japvoc
+# key: <jv
+# --
+* $1
+** Meaning
+- $2
+** Reading
+- $3
+** Context
+- $4

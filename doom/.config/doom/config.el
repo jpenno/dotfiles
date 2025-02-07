@@ -44,6 +44,11 @@
 ;; change `org-directory'. It must be set before org loads!
 ;; (setq org-directory "~/org/")
 (setq org-directory "~/Documents/org")
+(setq org-roam-directory "~/Documents/org/")
+
+(after! org
+  (setq org-agenda-files '("~/Documents/org/planning/todo/2025"
+                           "~/Documents/org/planning/tasks/upcomming-tasks.org")))
 
 (setq scroll-margin 7)
 
@@ -78,3 +83,52 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(use-package!  org-super-agenda
+  :after org-genda
+  :init
+  (setq org-super-agenda-groups `((:name "Today"
+                                   :time-grid t
+                                   :scheduled today)
+                                  (:name "Due today"
+                                   :deadline today)
+                                  (:name "Important"
+                                   :priority "A")
+                                  (:name "Overdue"
+                                   :deadline past)
+                                  (:name "Due soon"
+                                   :tag "bd")))
+  :config
+  (org-super-agenda-mode))
+
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override
+        `(+workspace-current-name))
+  )
+
+;; (setq
+;;  persp-emacsclient-init-frame-behaviour-override "main")
+
+(setq
+ projectile-project-search-path `("~/Documents/"))
+
+(use-package yasnippet
+  :config
+  (setq yas-snippet-dirs`("~/.dotfiles/doom/.config/doom/snippets/"))
+  (yas-global-mode 1))
+
+
+;; coustom key binds
+(map! :map 'override "C-c C-o" #'toggle-input-method)
+
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+;; indent go code with 2 wide tabs
+;; (add-hook 'go-mode-hook
+;;           (lambda ()
+;;             (add-hook 'before-save-hook 'gofmt-before-save)
+;;             (setq-default)
+;;             (setq tab-width 2)
+;;             (setq standard-indent 2)
+;;             (setq indent-tabs-mode nil)))
+(setq org-hide-emphasis-markers t)

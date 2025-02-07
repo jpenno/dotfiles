@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: demo
+# key: <d
+# --
+
+here is demo snippet
+$0
+more text
