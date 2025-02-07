@@ -70,6 +70,7 @@ $env.NU_PLUGIN_DIRS = [
 # source ($nu.default-config-dir | path join 'custom.nu')
 $env.PATH = ($env.PATH | append "~/.local/bin")
 $env.PATH = ($env.PATH | append "~/go/bin")
+$env.PATH = ($env.PATH | append "~/.config/emacs/bin")
 $env.EDITOR = "nvim"
 
 # omy posh setup
