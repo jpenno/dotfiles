@@ -7,4 +7,4 @@ window-decoration = false
 gtk-titlebar = false
 mouse-hide-while-typing = true
 
-command = nu
+command = fish
