@@ -34,6 +34,8 @@
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'doom-one)
 (setq doom-theme 'catppuccin)
+;; (setq catppuccin-flavor 'macchiato) ; or 'frappe 'latte, 'macchiato, or 'mocha
+;; (load-theme 'catppuccin t)
 
 (setq doom-font (font-spec :family "Intel One Mono" :size 32))
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -44,7 +46,6 @@
 ;; change `org-directory'. It must be set before org loads!
 ;; (setq org-directory "~/org/")
 (setq org-directory "~/Documents/org")
-(setq org-roam-directory "~/Documents/org/")
 
 (after! org
   (setq org-agenda-files '("~/Documents/org/planning/todo/2025"
@@ -106,20 +107,18 @@
         `(+workspace-current-name))
   )
 
-;; (setq
-;;  persp-emacsclient-init-frame-behaviour-override "main")
-
 (setq
  projectile-project-search-path `("~/Documents/"))
 
-(use-package yasnippet
-  :config
-  (setq yas-snippet-dirs`("~/.dotfiles/doom/.config/doom/snippets/"))
-  (yas-global-mode 1))
+;; (use-package yasnippet
+;;   :config
+;;   (setq yas-snippet-dirs`("~/.dotfiles/doom/.config/doom/snippets/"))
+;;   (yas-global-mode 1))
 
 
 ;; coustom key binds
 (map! :map 'override "C-c C-o" #'toggle-input-method)
+;; (map! :map 'override "TAB" #'yas-expand)
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
@@ -132,3 +131,15 @@
 ;;             (setq standard-indent 2)
 ;;             (setq indent-tabs-mode nil)))
 (setq org-hide-emphasis-markers t)
+
+;; org-roam config
+(setq org-roam-directory "~/Documents/org/")
+(setq org-roam-capture-templates
+      '(("d" "default" plain
+         "%?"
+         :if-new (file+head "~/Documents/org/notes/new/${slug}.org" "#+title: ${title}\n")
+         :unnarrowed t)
+        ("v" "japanese vocab" plain (file "~/.dotfiles/doom/.config/doom/templates/japaneses-vocab.org")
+         :if-new (file+head "~/Documents/org/notes/japaneses/vocab/${slug}.org" "#+title: ${title}\n")
+         :unnarrowed t)
+        ))

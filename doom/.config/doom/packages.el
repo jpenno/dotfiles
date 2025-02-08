@@ -49,5 +49,4 @@
 ;; (unpin! t)
 (package! catppuccin-theme)
 (package! org-super-agenda)
-(package! yasnippet)
 (package! rainbow-delimiters)
