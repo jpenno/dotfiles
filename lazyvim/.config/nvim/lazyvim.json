@@ -3,6 +3,7 @@
     "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.lang.go",
     "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.lang.zig",
     "lazyvim.plugins.extras.test.core"
   ],
   "news": {

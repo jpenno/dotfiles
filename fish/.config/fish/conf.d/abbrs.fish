@@ -9,7 +9,7 @@ abbr -a -- n 'nvim'
 abbr -a -- dot 'cd $DOTFILES'
 abbr -a -- tarls 'tar -tvf'
 abbr -a -- untar 'tar -xv'
-abbr -a -- zz exit
+abbr -a -- x exit
 
 # single key
 abbr -a -- c clear

@@ -6,6 +6,7 @@
 fish_add_path --prepend $HOME/.local/bin
 fish_add_path --prepend $HOME/go/bin
 fish_add_path --prepend $HOME/bin
+fish_add_path --prepend $HOME/.config/emacs/bin
 
 function nvm
     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
