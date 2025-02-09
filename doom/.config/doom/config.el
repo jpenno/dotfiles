@@ -48,7 +48,7 @@
 (setq org-directory "~/Documents/org")
 
 (after! org
-  (setq org-agenda-files '("~/Documents/org/planning/todo/2025"
+  (setq org-agenda-files '("~/Documents/org/daily/"
                            "~/Documents/org/planning/tasks/upcomming-tasks.org")))
 
 (setq scroll-margin 7)

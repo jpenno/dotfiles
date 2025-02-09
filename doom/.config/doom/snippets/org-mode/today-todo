@@ -2,10 +2,11 @@
 # name: today-todo
 # key: /tdd
 # --
-#+title: `(file-name-nondirectory(file-name-sans-extension (buffer-file-name)))`
 
 * Links
 - [[file:~/Documents/org/planning/tasks/tasks-index.org][tasks]]
 - [[file:~/Documents/org/index.org][index]]
 *  Todo list `(format-time-string "%d/%m/%Y")`
 $0
+
+* Notes
