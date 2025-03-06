@@ -4,9 +4,20 @@
 # --
 
 * Links
-- [[file:~/Documents/org/planning/tasks/tasks-index.org][tasks]]
 - [[file:~/Documents/org/index.org][index]]
+- [[file:~/Documents/org/planning/tasks/tasks-index.org][tasks]]
+- [[file:~/Documents/org/planning/tasks/upcomming-tasks.org][upcomming]]
 *  Todo list `(format-time-string "%d/%m/%Y")`
-$0
-
+** TODO Workout [0/5]
+- [ ] stretch
+- [ ] wrist thing's 2 * 3
+- [ ] 1 min leg balance ea
+- [ ] 40 sec plank
+- [ ] 5 min jog
+** TODO Japaneses [0/3]
+- [ ] 30 min of anki
+- [ ] 15 min of reading Tae Kim's Guide to Learning Japanese
+  - [[file:~/Documents/org/planning/tasks/tasks-index.org::60][link]]
+- [ ] 15 min of reading practice or watch a youtube video
+** TODO Programming
 * Notes

@@ -8,6 +8,7 @@ alias c = clear
 alias n = nvim
 alias cat = bat
 alias o = open
+alias x = exit
 
 # Tmux
 alias t = tmux
@@ -17,3 +18,5 @@ alias ta = tmux attach-session
 alias gr = go run .
 alias gt = go test
 
+# Odin
+alias or = odin run .

@@ -28,7 +28,7 @@ vim.keymap.set('x', 'K', ":move '<-2<CR>gv-gv")
 vim.keymap.set('x', 'J', ":move '>+1<CR>gv-gv")
 
 -- Save file by leader fs
-vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'save buffer' })
+vim.keymap.set('n', '<leader>fs', ':w<CR>', { desc = 'save buffer' })
 
 -- Don't yank on visual paste
 vim.keymap.set('v', 'p', '"_dP')

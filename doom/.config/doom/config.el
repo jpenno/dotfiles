@@ -51,7 +51,7 @@
   (setq org-agenda-files '("~/Documents/org/daily/"
                            "~/Documents/org/planning/tasks/upcomming-tasks.org")))
 
-(setq scroll-margin 7)
+;; (setq scroll-margin 7)
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -143,3 +143,93 @@
          :if-new (file+head "~/Documents/org/notes/japaneses/vocab/${slug}.org" "#+title: ${title}\n")
          :unnarrowed t)
         ))
+
+;; emms config
+(emms-all)
+(setq emms-player-list '(emms-player-mpv)
+      emms-player-mpv-parameters '("--no-video")
+      emms-info-functions '(emms-info-native))
+(setq-default
+ emms-source-file-default-directory "~/Music/"
+ )
+
+(defun track-title-from-file-name (file)
+  "For using with EMMS description functions. Extracts the track
+title from the file name FILE, which just means a) taking only
+the file component at the end of the path, and b) removing any
+file extension."
+  (with-temp-buffer
+    (save-excursion (insert (file-name-nondirectory (directory-file-name file))))
+    (ignore-error 'search-failed
+      (search-forward-regexp (rx "." (+ alnum) eol))
+      (delete-region (match-beginning 0) (match-end 0)))
+    (buffer-string)))
+
+(defun my-emms-track-description (track)
+  "Return a description of TRACK, for EMMS, but try to cut just
+the track name from the file name, and just use the file name too
+rather than the whole path."
+  (let ((artist (emms-track-get track 'info-artist))
+        (title (emms-track-get track 'info-title)))
+    (cond ((and artist title)
+           ;; Converting the artist/title to a string works around a bug in `emms-info-exiftool'
+           ;; where, if your track name is a number, e.g. "1999" by Jeroen Tel, then it will be an
+           ;; integer type here, confusing everything.
+           ;;
+           ;; I would fix the bug properly and submit a patch but I just cannot be bothered to
+           ;; figure out how to do that.
+           (concat (format "%s" artist) " - " (format "%s" title)))
+          (title title)
+          ((eq (emms-track-type track) 'file)
+           (track-title-from-file-name (emms-track-name track)))
+          (t (emms-track-simple-description track)))))
+
+(setq emms-track-description-function 'my-emms-track-description)
+
+;; emms key binds
+(map! :leader
+      (:prefix-map ("e" . "emms")
+       :desc "pause play" "p" #'emms-pause
+       :desc "play file" "f" #'emms-play-file
+       :desc "play dir tree" "d" #'emms-play-directory-tree
+       :desc "play dir" "D" #'emms-play-directory
+       :desc "next" "n" #'emms-next
+       :desc "prev" "b" #'emms-previous
+       :desc "shuffel" "S" #'emms-shuffle
+       :desc "skip forward 10s" "s" #'emms-seek-forward
+       :desc "stop emms" "q" #'emms-stop
+       )
+      )
+
+(use-package dired-hide-dotfiles
+  :hook (dired-mode , dired-hide-details-mode)
+  :config
+  (evil-collection-define-key 'normal 'dired-mode-map
+    "H" 'dired-hide-dotfiles-mode))
+
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (dired-hide-details-mode)
+            (dired-sort-toggle-or-edit)))
+
+;; shell set up
+(setq shell-file-name (executable-find
+                       "bash"))
+(setq-default vterm-shell "/bin/nu")
+
+;; (setq-default explicit-shell-file-name "/bin/zsh")
+;; (setq lsp-copilot-enabled f)
+(setq! lsp-copilot-enabled 'f)
+
+(set-frame-parameter nil 'alpha-background 85)
+(add-to-list 'default-frame-alist '(alpha-background . 85))
+
+(setq projectile-indexing-method 'native)
+
+;; set go indentation
+(setq-default go-basic-offset 2
+              tab-width 2
+              indent-tabs-mode t)
+
+
+(use-package odin-mode)

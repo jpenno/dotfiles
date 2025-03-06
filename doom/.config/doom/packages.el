@@ -50,3 +50,8 @@
 (package! catppuccin-theme)
 (package! org-super-agenda)
 (package! rainbow-delimiters)
+(package! dired-hide-dotfiles)
+
+;; Enable odin-mode and configure OLS as the language server
+(package! odin-mode
+  :recipe (:host github :repo "mattt-b/odin-mode"))

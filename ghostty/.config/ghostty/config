@@ -1,10 +1,10 @@
 font-size = 24
-font-family = Intel One Mono
-theme = kanagawabones
+font-family = Atkinson Hyperlegible Regular 
 theme = tokyonight-storm
-background-opacity = 0.70
+theme = kanagawabones
+background-opacity = 1.00
 window-decoration = false
 gtk-titlebar = false
 mouse-hide-while-typing = true
 
-command = fish
+command = nu
