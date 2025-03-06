@@ -90,7 +90,7 @@
     // Browser Launcher
     "custom/browser": {
         "format": "",
-        "on-click": "brave",
+        "on-click": "zen-browser",
         "tooltip": false
     },
 
