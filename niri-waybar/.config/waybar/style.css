@@ -1,0 +1,120 @@
+* {
+    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+}
+
+window#waybar {
+    background-color: #1e1e2e;
+    font-size: 32px;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0;
+}
+
+/* Left-most: Arch icon */
+#custom-appmenu {
+  background-image: url('/usr/share/icons/cachyos.svg');
+  background-color: #1e222a;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0px 12px;
+}
+
+/* Right-most: Clock */
+#clock {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border-radius: 0px;
+    padding: 0px 8px;
+}
+
+/* Active window title */
+#window {
+    font-weight: 800;
+    color: #cdd6f4;
+    border-radius: 0px;
+    padding: 4px 12px;
+    background-color: #1e1e2e;
+}
+
+/* Workspace container */
+#workspaces {
+    font-weight: bold;
+    border-radius: 0px;
+    background: #171f40;
+    color: #cdd6f4;
+}
+
+/* Individual workspace buttons */
+#workspaces button {
+    border-radius: 0px;
+    background: #1e1e2e;
+    color: #cdd6f4;
+}
+
+#workspaces button.active {
+    border-radius: 0px;
+    color: #11111b;
+    background: #89b4fa;
+}
+
+#workspaces button:hover {
+    border-radius: 0px;
+    border-width: 0px;
+    background: #bb9af7;
+}
+
+/* Power/exit button */
+#custom-exit {
+    background-color: #f38ba8;
+    font-weight: 800;
+    color: #0f1117;
+    padding: 0px 6px;
+    margin: 2px 2px 2px 0;
+}
+
+/* Tooltips */
+tooltip {
+    border-radius: 12px;
+    background-color: #0f1117;
+    color: #c0c0c0;
+    padding: 4px 8px;
+}
+
+/* Taskbar */
+#taskbar {
+    background-color: #1e1e2e;
+    margin: 0px;
+    border-radius: 0px;
+    font-weight: normal;
+}
+
+/* All system info modules */
+#backlight,
+#pulseaudio,
+#network,
+#bluetooth,
+#battery,
+#tray,
+#custom-updates,
+#custom-notification {
+    background-color: #1e1e2e;
+    font-weight: 800;
+    color: #cdd6f4;
+    border-radius: 0px;
+    padding: 4px 10px;
+}
+
+/* Battery critical warning */
+#battery.critical:not(.charging) {
+    background-color: #e65100;
+    color: #ffffff;
+    animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #0f1117;
+        color: #ffffff;
+    }
+}
