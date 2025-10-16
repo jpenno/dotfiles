@@ -24,11 +24,13 @@ vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
 -- Move selected line / block of text in visual mode
-vim.keymap.set('x', 'K', ":move '<-2<CR>gv-gv")
-vim.keymap.set('x', 'J', ":move '>+1<CR>gv-gv")
+vim.keymap.set('x', 'K', ":move '<-2<CR>gv-gv", { silent = true })
+vim.keymap.set('x', 'J', ":move '>+1<CR>gv-gv", { silent = true })
 
 -- Save file by leader fs
 vim.keymap.set('n', '<leader>fs', ':w<CR>', { desc = 'save buffer' })
+vim.keymap.set({ 'i' }, '<A-s>', '<C-o>:w<ENTER><Esc>', { silent = true })
+vim.keymap.set({ 'n' }, '<A-s>', ':w<ENTER>', { silent = true })
 
 -- Don't yank on visual paste
 vim.keymap.set('v', 'p', '"_dP')
@@ -62,7 +64,11 @@ vim.keymap.set('n', '<leader>mt', ':MarkdownPreviewToggle<CR>', { desc = 'toggle
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Oil
-vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+-- vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+
+-- fyler
+vim.keymap.set('n', '-', ':Fyler kind=float<CR>', { desc = 'Open parent directory', silent = true })
+vim.keymap.set('n', '<leader>e', ':Fyler kind=split_left_most<CR>', { desc = 'Open parent directory', silent = true })
 
 -- Go
 -- vim.keymap.set('n', '<C-r>', ':GoRename<CR>', { desc = 'Open parent directory' })

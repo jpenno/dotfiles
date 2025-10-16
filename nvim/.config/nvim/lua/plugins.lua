@@ -10,7 +10,8 @@ require('lazy').setup({
   require 'plugins.mini',
   require 'plugins.nvim-treesitter',
   -- require 'plugins.go',
-  require 'plugins.oil',
+  -- require 'plugins.oil',
+  require 'plugins.fyler',
   require 'plugins.harpoon',
   require 'plugins.flash',
   require 'plugins.obsidian',
@@ -22,15 +23,15 @@ require('lazy').setup({
   require 'plugins.noice',
   require 'plugins.snacks',
   require 'plugins.scope',
-  require 'plugins.markdown',
+  -- require 'plugins.markdown',
   -- require 'plugins.markdown-preview',
   -- themes
   require 'plugins.lualine',
   -- require 'plugins.night-owl',
   -- require 'plugins.solarized-osaka',
-  require 'plugins.kanagawa',
+  -- require 'plugins.kanagawa',
   -- require 'plugins.tokyonight',
-  -- require 'plugins.catppuccin',
+  require 'plugins.catppuccin',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
