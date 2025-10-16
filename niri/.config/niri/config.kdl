@@ -52,7 +52,8 @@ binds {
     MOD+SHIFT+ESCAPE                     { show-hotkey-overlay; }
 
     // ─── Applications ───
-    MOD+RETURN                          hotkey-overlay-title="Open Terminal: alacritty" { spawn-sh "alacritty"; }
+    MOD+RETURN                          hotkey-overlay-title="Open Terminal: ghostty" { spawn-sh "ghostty"; }
+    MOD+T                          hotkey-overlay-title="Open Terminal: ghostty" { spawn-sh "ghostty"; }
     MOD+SPACE                           hotkey-overlay-title="Open App Launcher: wofi" { spawn-sh "wofi"; }
     MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "brave"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
@@ -75,11 +76,14 @@ binds {
 
     // ─── Window Movement and Focus ───
     MOD+Q                               { close-window; }
+    MOD+ESCAPE                          { close-window; }
 
     MOD+LEFT                            { focus-column-left; }
     MOD+H                               { focus-column-left; }
+    ALT+SHIFT+TAB                       { focus-column-left; }
     MOD+RIGHT                           { focus-column-right; }
     MOD+L                               { focus-column-right; }
+    ALT+TAB                             { focus-column-right; }
     MOD+UP                              { focus-window-or-workspace-up; }
     MOD+K                               { focus-window-or-workspace-up; }
     MOD+DOWN                            { focus-window-or-workspace-down; }
@@ -91,8 +95,12 @@ binds {
     MOD+CTRL+L                          { move-column-right; }
     MOD+CTRL+UP                         { move-window-up; }
     MOD+CTRL+K                          { move-window-up; }
+    MOD+SHIFT+K                         { move-window-to-workspace-up; }
+    MOD+CTRL+SHIFT+K                    { move-column-to-workspace-up; }
     MOD+CTRL+DOWN                       { move-window-down; }
     MOD+CTRL+J                          { move-window-down; }
+    MOD+SHIFT+J                         { move-window-to-workspace-down; }
+    MOD+CTRL+SHIFT+J                    { move-column-to-workspace-down; }
 
     MOD+COMMA                           { consume-or-expel-window-left; }
     MOD+Period                          { consume-or-expel-window-right; }
@@ -152,7 +160,9 @@ binds {
     MOD+CTRL+8                          { move-column-to-workspace 8; }
     MOD+CTRL+9                          { move-column-to-workspace 9; }
 
-    MOD+TAB                             { focus-workspace-previous; }
+    MOD+TAB                             { focus-workspace-down; }
+    MOD+CTRL+TAB                        { focus-workspace-previous; }
+    MOD+SHIFT+TAB                       { focus-workspace-up; }
 
     // ─── Layout Controls ───
     MOD+F                               { set-column-width "100%"; }
@@ -166,7 +176,7 @@ binds {
     MOD+SHIFT+T                         { switch-preset-column-width; }
 
     // ─── Modes ───
-    MOD+T                               { toggle-window-floating; }
+    MOD+V                               { toggle-window-floating; }
     MOD+SHIFT+F                         { fullscreen-window; }
     MOD+W                               { toggle-column-tabbed-display; }
 
@@ -178,7 +188,7 @@ binds {
     // ─── Emergency Escape Key ───
     // Use this when a fullscreen app blocks your keybinds.
     // It disables any active keyboard shortcut inhibitor, restoring control.
-    MOD+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    // MOD+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // ─── Exit / Power ───
     CTRL+ALT+DELETE                     { quit; } // Also quits Niri
