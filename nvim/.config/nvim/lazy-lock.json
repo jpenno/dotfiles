@@ -31,7 +31,7 @@
   "obsidian.nvim": { "branch": "main", "commit": "ae1f76a75c7ce36866e1d9342a8f6f5b9c2caf9b" },
   "oil.nvim": { "branch": "master", "commit": "975a77cce3c8cb742bc1b3629f4328f5ca977dad" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
-  "rainbow-delimiters.nvim": { "branch": "master", "commit": "2619f1a13a0053afe2266b306908de27dc18978f" },
+  "rainbow-delimiters.nvim": { "branch": "master", "commit": "3277ad5f96eb03c9d618c88e24f683e4364e578c" },
   "render-markdown": { "branch": "main", "commit": "595ac4f7e7c0eaba7bf1d8fd6ec0f6ac91c7e33b" },
   "snacks.nvim": { "branch": "main", "commit": "cc048063936b0743b2e53612fb13f557fdee27c8" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "2a5ceff981501cff8f46871d5402cd3378a8ab6a" },

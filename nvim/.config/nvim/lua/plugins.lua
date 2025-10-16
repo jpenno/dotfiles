@@ -9,7 +9,7 @@ require('lazy').setup({
   require 'plugins.todo-comments',
   require 'plugins.mini',
   require 'plugins.nvim-treesitter',
-  require 'plugins.go',
+  -- require 'plugins.go',
   require 'plugins.oil',
   require 'plugins.harpoon',
   require 'plugins.flash',
