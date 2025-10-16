@@ -1,6 +1,5 @@
 font-size = 24
-font-family = Atkinson Hyperlegible Regular 
-theme = kanagawabones
+theme = Catppuccin Mocha
 background-opacity = 1.00
 window-decoration = false
 gtk-titlebar = false
