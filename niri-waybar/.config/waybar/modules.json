@@ -97,9 +97,9 @@
 
   // Clock
   "clock": {
-    "format": "{:%I:%M } ",
-    "on-click": "ags -t calendar",
-    "tooltip": false
+    "format": "{:%I:%M } 󰥔",
+    "format-alt": "{:%d-%m} ",
+    "tooltip": false,
   },
 
   "niri/language": {
@@ -125,13 +125,10 @@
   // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format": "{volume}% {icon}",
+    "format-muted": "",
     "format-icons": {
+      "default": ["󱄠", "󱄠", "󱄠"]
     },
     "on-click": "pavucontrol"
   },

@@ -1,9 +1,17 @@
+@import "mocha.css";
+
 * {
     font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
 }
 
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+
 window#waybar {
-    background-color: #1e1e2e;
+    background-color: shade(@base, 0.9);
     font-size: 32px;
     border-radius: 0px;
     margin: 0px;
@@ -22,16 +30,16 @@ window#waybar {
 
 /* Right-most: Clock */
 #clock {
-    background-color: #1e1e2e;
-    color: #cdd6f4;
-    border-radius: 0px;
-    padding: 0px 8px;
+  color: @blue;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 /* Active window title */
 #window {
     font-weight: 800;
-    color: #cdd6f4;
+    color: @sky;
     border-radius: 0px;
     padding: 4px 12px;
     background-color: #1e1e2e;
@@ -39,38 +47,36 @@ window#waybar {
 
 /* Workspace container */
 #workspaces {
-    font-weight: bold;
-    border-radius: 0px;
-    background: #171f40;
-    color: #cdd6f4;
+  background-color: @surface0;
+  border-radius: 1rem;
+  margin: 5px;
+  margin-left: 1rem;
 }
 
 /* Individual workspace buttons */
 #workspaces button {
-    border-radius: 0px;
-    background: #1e1e2e;
-    color: #cdd6f4;
+  color: @lavender;
+  border-radius: 1rem;
+  padding: 0.4rem;
 }
 
 #workspaces button.active {
-    border-radius: 0px;
-    color: #11111b;
-    background: #89b4fa;
+  color: @sky;
+  border-radius: 1rem;
 }
 
 #workspaces button:hover {
-    border-radius: 0px;
-    border-width: 0px;
-    background: #bb9af7;
+  color: @sapphire;
+  border-radius: 1rem;
 }
 
 /* Power/exit button */
 #custom-exit {
-    background-color: #f38ba8;
-    font-weight: 800;
-    color: #0f1117;
-    padding: 0px 6px;
-    margin: 2px 2px 2px 0;
+  border-radius: 1rem;
+  margin: 5px;
+  margin-left: 1rem;
+  background-color: @red;
+  color: @crust;
 }
 
 /* Tooltips */
@@ -98,11 +104,10 @@ tooltip {
 #tray,
 #custom-updates,
 #custom-notification {
-    background-color: #1e1e2e;
-    font-weight: 800;
-    color: #cdd6f4;
-    border-radius: 0px;
-    padding: 4px 10px;
+  color: @maroon;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 /* Battery critical warning */
