@@ -1,6 +1,6 @@
 font-size = 24
 theme = Catppuccin Mocha
-background-opacity = 1.00
+background-opacity=0.95
 window-decoration = false
 gtk-titlebar = false
 mouse-hide-while-typing = true
