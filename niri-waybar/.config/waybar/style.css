@@ -104,7 +104,7 @@ tooltip {
 #tray,
 #custom-updates,
 #custom-notification {
-  color: @maroon;
+  color: @mauve;
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
