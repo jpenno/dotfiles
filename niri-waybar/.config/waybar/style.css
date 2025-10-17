@@ -20,8 +20,8 @@ window#waybar {
 
 /* Left-most: Arch icon */
 #custom-appmenu {
-  background-image: url('/usr/share/icons/cachyos.svg');
-  background-color: #1e222a;
+  /* background-image: url('/usr/share/icons/cachyos.svg'); */
+  background-color: @base;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -39,10 +39,9 @@ window#waybar {
 /* Active window title */
 #window {
     font-weight: 800;
-    color: @sky;
+    color: @subtext0;
     border-radius: 0px;
     padding: 4px 12px;
-    background-color: #1e1e2e;
 }
 
 /* Workspace container */
@@ -82,14 +81,11 @@ window#waybar {
 /* Tooltips */
 tooltip {
     border-radius: 12px;
-    background-color: #0f1117;
-    color: #c0c0c0;
     padding: 4px 8px;
 }
 
 /* Taskbar */
 #taskbar {
-    background-color: #1e1e2e;
     margin: 0px;
     border-radius: 0px;
     font-weight: normal;
