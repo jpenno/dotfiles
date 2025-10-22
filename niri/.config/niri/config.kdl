@@ -1,10 +1,11 @@
-// Niri configuration for CachyOS
+// Niri configuragion for CachyOS
 // For documentation and full reference, see: https://github.com/YaLTeR/niri/wiki
 
 // ────────────── Input Configuration ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 
 input {
+
     keyboard {
         xkb {
             layout "us" // Use the German keyboard layout
@@ -13,7 +14,7 @@ input {
     }
 
     mouse {
-        // off
+       // off
         // natural-scroll
         accel-speed 0.0
         accel-profile "flat"
@@ -25,8 +26,10 @@ input {
         natural-scroll // Enable natural (macOS-style) scrolling
     }
 
-    focus-follows-mouse // Automatically focus windows under the mouse pointer
-    workspace-auto-back-and-forth // Enable workspace back & forth switching
+    // focus-follows-mouse // Automatically focus windows under the mouse pointer
+    // workspace-auto-back-and-forth // Enable workspace back & forth switching
+    // Allow focus-follows-mouse only when it will not scroll the view.
+    focus-follows-mouse max-scroll-amount="0%"
 }
 
 // ────────────── Output Configuration ──────────────
@@ -52,12 +55,14 @@ binds {
     MOD+SHIFT+ESCAPE                     { show-hotkey-overlay; }
 
     // ─── Applications ───
-    MOD+RETURN                          hotkey-overlay-title="Open Terminal: ghostty" { spawn-sh "ghostty"; }
-    MOD+T                          hotkey-overlay-title="Open Terminal: ghostty" { spawn-sh "ghostty"; }
-    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: wofi" { spawn-sh "wofi"; }
-    MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "brave"; }
-    MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
-    MOD+ALT+R                           hotkey-overlay-title="Restart waybar" { spawn-sh "killall waybar && waybar"; }
+    MOD+RETURN       hotkey-overlay-title="Open Terminal: ghostty" { spawn-sh "ghostty"; }
+    MOD+T            hotkey-overlay-title="Open Terminal: ghostty" { spawn-sh "ghostty"; }
+    MOD+SPACE        hotkey-overlay-title="Open App Launcher: wofi" { spawn-sh "wofi"; }
+    MOD+B            hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
+    MOD+ALT+L        hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
+    MOD+ALT+R        hotkey-overlay-title="Restart waybar" { spawn-sh "killall waybar && waybar"; }
+    MOD+N            hotkey-overlay-title="Open notes" { spawn "ghostty" "-e" "nvim" "/home/jp/Documents/notes/Index.md"; }
+    MOD+SHIFT+N            hotkey-overlay-title="Open notes" { spawn "ghostty" "-e" "nvim" "/home/jp/Documents/notes/Planning/Tasks.md"; }
     
     // Please choose your own file manager
     MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
@@ -65,7 +70,7 @@ binds {
     // ─── Audio Controls ───
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01+"; }
+     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01+"; }
     XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01-"; }
     XF86AudioMute                       allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute                    allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
@@ -165,7 +170,7 @@ binds {
     MOD+SHIFT+TAB                       { focus-workspace-up; }
 
     // ─── Layout Controls ───
-    MOD+F                               { set-column-width "100%"; }
+    MOD+F                               { switch-preset-column-width; }
     MOD+CTRL+F                          { expand-column-to-available-width; }
     MOD+C                               { center-column; }
     MOD+CTRL+C                          { center-visible-columns; }
@@ -173,7 +178,7 @@ binds {
     MOD+EQUAL                           { set-column-width "+10%"; }
     MOD+SHIFT+MINUS                     { set-window-height "-10%"; }
     MOD+SHIFT+EQUAL                     { set-window-height "+10%"; }
-    MOD+SHIFT+T                         { switch-preset-column-width; }
+    // MOD+SHIFT+T                         { switch-preset-column-width; }
 
     // ─── Modes ───
     MOD+V                               { toggle-window-floating; }
@@ -213,28 +218,56 @@ binds {
     layout {
         gaps 8 // Gap between windows
         center-focused-column "never" // Don’t auto-center focused column
+        always-center-single-column
+
+        default-column-width { proportion 0.5; }
 
         preset-column-widths {
-            proportion 0.25
             proportion 0.5
-            proportion 0.75
+            proportion 1.0
         }
-
 
         focus-ring {
+            off
             width 3
-            active-color "#00ac89"
-            inactive-color "#505050"
+            active-color "#89dceb"
+            inactive-color "#6c7086"
         }
 
-        shadow {
-            softness 30
-            spread 5
-            offset x=0 y=5
-            color "#0007"
+        border {
+            width 3
+            active-color "#89dceb"
+            inactive-color "#6c7086"
         }
 
-        struts {}
+        tab-indicator {
+          // off
+          hide-when-single-tab
+          place-within-column
+          gap 5
+          width 10
+          length total-proportion=1.0
+          position "left"
+          gaps-between-tabs 2
+          corner-radius 8
+          active-color "#74c7ec"
+          inactive-color "#6c7086"
+          urgent-color "#f38ba8"
+        }
+
+        // shadow {
+        //     softness 30
+        //     spread 5
+        //     offset x=0 y=5
+        //     color "#0007"
+        // }
+
+        /-struts {
+          left 8
+          right 8
+          top 8
+          bottom 8
+        }
     }
 
 // ────────────── Animation Settings ──────────────

@@ -31,7 +31,8 @@
       "(.*) - Outlook": "$1",
       "(.*) Microsoft Teams": "$1"
     },
-    "separate-outputs": true
+    "separate-outputs": true,
+    "tooltip": false
   },
 
   // Empty
@@ -75,6 +76,7 @@
   "custom/exit": {
     "format": " 󰐥 ",
     "on-click": "~/.config/waybar/scripts/power-menu.sh",
+    "tooltip": false,
     "tooltip-format": "Power Menu"
   },
 
@@ -130,6 +132,7 @@
     "format-icons": {
       "default": ["󱄠", "󱄠", "󱄠"]
     },
+    "tooltip": false,
     "on-click": "pavucontrol"
   },
 

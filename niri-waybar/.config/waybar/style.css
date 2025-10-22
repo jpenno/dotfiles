@@ -5,15 +5,19 @@
 }
 
 #waybar {
-  background: transparent;
-  color: @text;
-  margin: 5px 5px;
+    border: 0.15rem solid @blue;
+    background: transparent;
+}
+
+window#waybar.empty {
+     background: rgba(30, 30, 46, 0.8);
 }
 
 window#waybar {
-    background-color: shade(@base, 0.9);
-    font-size: 32px;
-    border-radius: 0px;
+    background: rgba(30, 30, 46, 0.8);
+    color: shade(@base, 1.0);
+    font-size: 2rem;
+    border-radius: 3rem;
     margin: 0px;
     padding: 0;
 }
@@ -41,13 +45,12 @@ window#waybar {
     font-weight: 800;
     color: @subtext0;
     border-radius: 0px;
-    padding: 4px 12px;
 }
 
 /* Workspace container */
 #workspaces {
   background-color: @surface0;
-  border-radius: 1rem;
+  border-radius: 3rem;
   margin: 5px;
   margin-left: 1rem;
 }
@@ -55,13 +58,12 @@ window#waybar {
 /* Individual workspace buttons */
 #workspaces button {
   color: @lavender;
-  border-radius: 1rem;
-  padding: 0.4rem;
+  border-radius: 3rem;
 }
 
 #workspaces button.active {
-  color: @sky;
-  border-radius: 1rem;
+  color: @crust;
+  background-color: @blue;
 }
 
 #workspaces button:hover {
@@ -71,8 +73,8 @@ window#waybar {
 
 /* Power/exit button */
 #custom-exit {
-  border-radius: 1rem;
-  margin: 5px;
+  border-radius: 3rem;
+  margin: 10px;
   margin-left: 1rem;
   background-color: @red;
   color: @crust;
@@ -101,7 +103,7 @@ tooltip {
 #custom-updates,
 #custom-notification {
   color: @mauve;
-  border-radius: 1rem 0px 0px 1rem;
+  /* border-radius: 1rem 0px 0px 1rem; */
   margin-left: 1rem;
   margin-right: 1rem;
 }
