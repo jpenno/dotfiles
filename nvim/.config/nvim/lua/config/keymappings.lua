@@ -5,6 +5,9 @@ vim.g.maplocalleader = ' '
 vim.keymap.set('n', 'J', '5j')
 vim.keymap.set('n', 'K', '5k')
 
+-- Quit
+vim.keymap.set('n', '<leader>qq', ':q<CR>', { desc = 'Quit with out saveing' })
+
 -- Easy esc
 vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('i', 'kj', '<Esc>')
