@@ -1,7 +1,12 @@
 font-size = 24
 theme = Catppuccin Mocha
-background-opacity=0.95
+font-family = Atkinson Hyperlegible Regular 
+background-opacity = 0.90
 window-decoration = false
 gtk-titlebar = false
 mouse-hide-while-typing = true
+confirm-close-surface = false
+window-padding-x = 20
+window-padding-y = 10
+
 

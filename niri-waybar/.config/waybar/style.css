@@ -1,7 +1,7 @@
 @import "mocha.css";
 
 * {
-    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Atkinson Hyperlegible", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
 }
 
 #waybar {
@@ -67,8 +67,8 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  color: @sapphire;
-  border-radius: 1rem;
+  color: @crust;
+  background: @sky;
 }
 
 /* Power/exit button */

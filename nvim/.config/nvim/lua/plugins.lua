@@ -14,8 +14,10 @@ require('lazy').setup({
   require 'plugins.fyler',
   require 'plugins.harpoon',
   require 'plugins.flash',
+  require 'plugins.org',
+  -- require 'plugins.norg',
   -- require 'plugins.obsidian',
-  require 'plugins.obsidian-new',
+  -- require 'plugins.obsidian-new',
   require 'plugins.nvim-origami',
   -- require 'plugins.neogit',
   -- require 'plugins.lazygit',
@@ -34,6 +36,7 @@ require('lazy').setup({
   -- require 'plugins.kanagawa',
   -- require 'plugins.tokyonight',
   require 'plugins.catppuccin',
+  require 'plugins.tiny-inline-diagnostic',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

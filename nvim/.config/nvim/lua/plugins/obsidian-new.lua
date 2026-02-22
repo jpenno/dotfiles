@@ -22,6 +22,26 @@ return {
 
     legacy_commands = false,
 
+    templates = {
+      folder = './__Templates',
+      date_format = nil,
+      time_format = nil,
+      substitutions = {},
+
+      ---@class obsidian.config.CustomTemplateOpts
+      ---
+      ---@field notes_subdir? string
+      ---@field note_id_func? (fun(title: string|?, path: obsidian.Path|?): string)
+      customizations = {},
+    },
+    daily_notes = {
+      folder = './Planning/Daily-notes/',
+      date_format = nil,
+      alias_format = nil,
+      default_tags = { 'daily-notes' },
+      workdays_only = true,
+    },
+
     checkbox = {
       enabled = true,
       create_new = true,

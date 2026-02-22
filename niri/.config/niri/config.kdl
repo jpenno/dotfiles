@@ -29,7 +29,7 @@ input {
     // focus-follows-mouse // Automatically focus windows under the mouse pointer
     // workspace-auto-back-and-forth // Enable workspace back & forth switching
     // Allow focus-follows-mouse only when it will not scroll the view.
-    focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="20%"
 }
 
 // ────────────── Output Configuration ──────────────
@@ -58,12 +58,12 @@ binds {
     MOD+RETURN       hotkey-overlay-title="Open Terminal: ghostty" { spawn-sh "ghostty"; }
     MOD+T            hotkey-overlay-title="Open Terminal: ghostty" { spawn-sh "ghostty"; }
     MOD+SPACE        hotkey-overlay-title="Open App Launcher: wofi" { spawn-sh "wofi"; }
-    MOD+B            hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
+    MOD+B            hotkey-overlay-title="Open Browser" { spawn-sh "brave"; }
     MOD+ALT+L        hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+ALT+R        hotkey-overlay-title="Restart waybar" { spawn-sh "killall waybar && waybar"; }
-    MOD+N            hotkey-overlay-title="Open notes" { spawn "ghostty" "-e" "nvim" "/home/jp/Documents/notes/Index.md"; }
-    MOD+SHIFT+N            hotkey-overlay-title="Open notes" { spawn "ghostty" "-e" "nvim" "/home/jp/Documents/notes/Planning/Tasks.md"; }
-    
+    MOD+N            hotkey-overlay-title="Open notes" { spawn "ghostty" "-e" "nvim" "/home/jp/Documents/notes/20251025202717-notes_index.org"; }
+    // MOD+SHIFT+N            hotkey-overlay-title="Open notes" { spawn "ghostty" "-e" "nvim" "/home/jp/Documents/notes/Planning/Tasks.md"; }
+    MOD+X        hotkey-overlay-title="Exit" { spawn-sh "~/.config/waybar/scripts/power-menu.sh"; }
     // Please choose your own file manager
     MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
 
@@ -218,7 +218,8 @@ binds {
     layout {
         gaps 8 // Gap between windows
         center-focused-column "never" // Don’t auto-center focused column
-        always-center-single-column
+        // always-center-single-column
+        background-color "transparent"
 
         default-column-width { proportion 0.5; }
 
@@ -236,7 +237,7 @@ binds {
 
         border {
             width 3
-            active-color "#89dceb"
+            active-color "#89b4fa"
             inactive-color "#6c7086"
         }
 
@@ -304,6 +305,28 @@ binds {
             spring damping-ratio=1.0 stiffness=900 epsilon=0.0001
         }
     }
+overview {
+    zoom 0.25
+}
+// Make the wallpaper stationary, rather than moving with workspaces.
+layer-rule {
+    // This is for swaybg; change for other wallpaper tools.
+    // Find the right namespace by running niri msg layers.
+    match namespace="^swww-daemon$"
+    place-within-backdrop true
+}
+
+// Set transparent workspace background color.
+// layout {
+//     background-color "transparent"
+// }
+
+// Optionally, disable the workspace shadows in the overview.
+// overview {
+//     workspace-shadow {
+//         off
+//     }
+// }
 
 // ────────────── Window Rules ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
@@ -311,6 +334,11 @@ binds {
     window-rule {
         match app-id=r#"firefox$"# title="^Picture-in-Picture$"
         open-floating true // Always float Firefox PiP windows
+    }
+
+    window-rule {
+        match app-id=r#"^org\.wezfurlong\.wezterm$"#
+        default-column-width {}
     }
 
     window-rule {
