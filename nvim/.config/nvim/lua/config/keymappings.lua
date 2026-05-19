@@ -67,11 +67,11 @@ vim.keymap.set('n', '<leader>mt', ':MarkdownPreviewToggle<CR>', { desc = 'toggle
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Oil
--- vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 
 -- fyler
-vim.keymap.set('n', '-', ':Fyler kind=float<CR>', { desc = 'Open parent directory', silent = true })
-vim.keymap.set('n', '<leader>e', ':Fyler kind=split_left_most<CR>', { desc = 'Open parent directory', silent = true })
+-- vim.keymap.set('n', '-', ':Fyler kind=float<CR>', { desc = 'Open parent directory', silent = true })
+-- vim.keymap.set('n', '<leader>e', ':Fyler kind=split_left_most<CR>', { desc = 'Open parent directory', silent = true })
 
 -- Go
 -- vim.keymap.set('n', '<C-r>', ':GoRename<CR>', { desc = 'Open parent directory' })

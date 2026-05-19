@@ -26,6 +26,9 @@ input {
         natural-scroll // Enable natural (macOS-style) scrolling
     }
 
+    tablet {
+        map-to-output "DP-2" // Replace with your monitor name
+    }
     // focus-follows-mouse // Automatically focus windows under the mouse pointer
     // workspace-auto-back-and-forth // Enable workspace back & forth switching
     // Allow focus-follows-mouse only when it will not scroll the view.
@@ -72,6 +75,10 @@ binds {
     // The allow-when-locked=true property makes them work even when the session is locked.
      XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01+"; }
     XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01-"; }
+
+     Mod+Page_Up                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01+"; }
+    Mod+Page_Down                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01-"; }
+
     XF86AudioMute                       allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute                    allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
     XF86AudioNext                       allow-when-locked=true { spawn-sh "playerctl next"; }

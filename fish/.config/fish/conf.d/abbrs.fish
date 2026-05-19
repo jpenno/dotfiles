@@ -6,6 +6,7 @@ set -q MY_ABBRS_INITIALIZED; and return
 
 abbr -a -- - 'cd -'
 abbr -a -- n 'nvim'
+abbr -a -- n. 'nvim .'
 abbr -a -- dot 'cd $DOTFILES'
 abbr -a -- tarls 'tar -tvf'
 abbr -a -- untar 'tar -xv'
